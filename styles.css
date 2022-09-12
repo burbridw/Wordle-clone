@@ -1,0 +1,7 @@
+.answer-box {
+    height: 2rem;
+    width: 2rem;
+    border: 1px solid black;
+    background-color: grey;
+    display: inline-block;
+}
