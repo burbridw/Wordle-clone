@@ -48,27 +48,30 @@ function buildDictionary() {
     fiveLetterWords.forEach( (x) => {
         dictionary.innerHTML += `<div class="dictionary-image">${x} <img src="${fiveLetterWordsObj[x]}"></div>`
     })
-
 }
-buildDictionary()
 start()
 
+
+
+console.log(answerArr)
+
+
 function start() {
-    randomSelectFive = Math.floor( Math.random()*104 )
-    word = fiveLetterWords[randomSelectFive]
-    answerArr = word.split("")
-    console.log(answerArr)
-    answerCount = 0
-    round = 0
-    correctGuess = 0
-    gameActive = true
-    inputArr = []
-    let allInputs = document.querySelectorAll(".answer-box")
-    allInputs.forEach( (x) => {
-        x.textContent = ""
-        if (x.style.backgroundColor !== "rgb(243, 243, 231)")
-        x.style.backgroundColor = "rgb(243, 243, 231)"
-    })
+
+randomSelectFive = Math.floor( Math.random()*101 )
+word = fiveLetterWords[randomSelectFive]
+answerArr = word.split("")
+answerCount = 0
+round = 0
+correctGuess = 0
+gameActive = true
+inputArr = []
+let allInputs = document.querySelectorAll(".answer-box")
+allInputs.forEach( (x) => {
+    x.textContent = ""
+    if (x.style.backgroundColor !== "rgb(243, 243, 231)")
+    x.style.backgroundColor = "rgb(243, 243, 231)"
+})
     let allKeys = document.querySelectorAll(".key")
     allKeys.forEach( (x) => {
         if (x.style.backgroundColor !== "rgb(243, 243, 231)")
@@ -81,17 +84,13 @@ const enterBtn = document.getElementById("enter")
 const keyboardDiv = document.querySelector(".keyboard")
 const messageBox = document.getElementById("message-box")
 const endMessage = document.getElementById("end-message")
-const endImage = document.getElementById("end-image")
 const resetBtn = document.getElementById("reset-btn")
 const endBox = document.querySelector(".reset-box")
-const upperBox = document.querySelector(".upper-container")
-const lowerBox = document.querySelector(".lower-container")
-const imageBox = document.querySelector(".answer-image-container")
-const dictionaryBtn = document.getElementById("dictionary-button")
-const closeDictionaryBtn = document.getElementById("close-dictionary")
+
 const answerBoxContainer = document.querySelector(".answer-box-container")
 
 let answerInput = document.querySelector(".answer-active")
+
 let answerBox0 = answerInput.children[0]
 let answerBox1 = answerInput.children[1]
 let answerBox2 = answerInput.children[2]
@@ -204,22 +203,16 @@ mKey.addEventListener("click",function() {
     press("m")
 })
 
-window.addEventListener("keydown", (x) => {
-    if (gameActive) {
+window.addEventListener("keydown", (x) => {       
     if (x.key === "Enter") {
         checkGuess()
     } else if (x.key === "Backspace") {
         del()
     } else {
-        if ( /[a-z]/.test(x.key) && x.key.length === 1) {
+    if ( /[a-z]/.test(x.key) && x.key.length === 1) {
         press(x.key)
-        }
     }
-    } else {
-    if (x.key === "Enter") {
-        resetGame()
-        }
-    }
+}
 })
 
 
@@ -282,21 +275,8 @@ enterBtn.addEventListener("click",function(){
 })
 
 resetBtn.addEventListener("click",function(){
-    resetGame()
-})
-
-dictionaryBtn.addEventListener("click",function(){
-    dictionary.classList.remove("dictionary-close")
-})
-
-closeDictionaryBtn.addEventListener("click",function() {
-    dictionary.classList.add("dictionary-close")
-})
-
-function resetGame() {
     endBox.classList.add("hide-me")
-    upperBox.classList.remove("go-transparent")
-    lowerBox.classList.remove("go-transparent")
+    
     answerInput.classList.remove("answer-active")
     let currentAnswerBox = answerBoxContainer.children[0]
     currentAnswerBox.classList.add("answer-active")
@@ -311,10 +291,11 @@ function resetGame() {
         x.textContent = ""
     })
     start()
-}
+})
 
 function checkGuess() {
     let thisGuess = inputArr.join("")
+    
     if (gameActive) {
     if (answerCount !== 5) {
         showMessage("Not enough letters")
@@ -325,8 +306,8 @@ function checkGuess() {
         let currentImage = fiveLetterWordsObj[thisGuess]
         currentImageBox.innerHTML = `<img src=${currentImage}>`
         greenCheck()
-        }
     }
+}
 }
 
 function showMessage(message) {
@@ -340,17 +321,21 @@ function showMessage(message) {
 function greenCheck() {
     for ( let i = 0; i < answerArr.length; i++ ) {
         if (answerArr[i] === inputArr[i]) {
+            console.log("green" + i)
             let currentAnswer = answerInput.children[i]
-            currentAnswer.style.backgroundColor ="greenyellow"
+            currentAnswer.style.backgroundColor ="green"
+
             let allKeys = document.querySelectorAll(".key")
             allKeys.forEach ( (x) => {
                 if (x.textContent === inputArr[i]) {
-                    x.style.backgroundColor = "greenyellow"
+                    x.style.backgroundColor = "green"
                 }
             })
             correctGuess++
             answerArr.splice( i, 1, "*")
             inputArr.splice( i, 1, "@")
+            console.log(answerArr)
+            console.log(inputArr)
             }
         }   
             if ( correctGuess === 5) {
@@ -363,27 +348,35 @@ function greenCheck() {
 function yellowCheck() {
     for ( let i = 0; i < answerArr.length; i++ ) {
         if (answerArr.includes(inputArr[i]) && answerArr[i] !== inputArr[i]) {
+        console.log("yellow" + i)
         let currentAnswer = answerInput.children[i]
-            currentAnswer.style.backgroundColor ="yellow"
+            currentAnswer.style.backgroundColor ="goldenrod"
 
             let allKeys = document.querySelectorAll(".key")
             allKeys.forEach ( (x) => {
-                if (x.textContent === inputArr[i] && x.style.backgroundColor !== "greenyellow") {
-                    x.style.backgroundColor = "yellow"
+                if (x.textContent === inputArr[i] && x.style.backgroundColor !== "green") {
+                    x.style.backgroundColor = "goldenrod"
                 }
             })
-            let cutIndex = answerArr.indexOf(`${inputArr[i]}`)
-            inputArr.splice( i, 1, "@")
-            answerArr.splice( cutIndex, 1, "*")
+        console.log(answerArr.indexOf(`${inputArr[i]}`))
+        let cutIndex = answerArr.indexOf(`${inputArr[i]}`)
+
+        inputArr.splice( i, 1, "@")
+        
+        answerArr.splice( cutIndex, 1, "*")
+        
+        console.log(answerArr)
+        console.log(inputArr)
         } 
     }  for ( let i = 0; i < 5; i++ ) {
         let currentAnswer = answerInput.children[i]
         let allKeys = document.querySelectorAll(".key")
-        if (currentAnswer.style.backgroundColor !== "greenyellow" && currentAnswer.style.backgroundColor !== "yellow") {
-            currentAnswer.style.backgroundColor = "darkgray"
+        if (currentAnswer.style.backgroundColor !== "green" && currentAnswer.style.backgroundColor !== "goldenrod") {
+            currentAnswer.style.backgroundColor = "grey"
+            console.log(currentAnswer.textContent)
             allKeys.forEach ( (x) => {
-                if (x.textContent === currentAnswer.textContent && x.style.backgroundColor !== "greenyellow" && x.style.backgroundColor !== "yellow") {
-                    x.style.backgroundColor = "darkgray"
+                if (x.textContent === currentAnswer.textContent && x.style.backgroundColor !== "green" && x.style.backgroundColor !== "goldenrod") {
+                    x.style.backgroundColor = "grey"
                 }
             })
         }
@@ -395,6 +388,7 @@ function yellowCheck() {
 }
 
 function playerWins() {
+    console.log("player wins")
     gameActive = false
     endMessage.textContent = "You Win!"
     let correctImage = fiveLetterWordsObj[word]
@@ -404,9 +398,11 @@ function playerWins() {
     setTimeout( () => {
         endBox.classList.remove("hide-me")
     }, 1000)
+    endBox.classList.remove("hide-me")
 }
 
 function gameOver() {
+    console.log("Game Over")
     gameActive = false
     endMessage.textContent = "You Lose!"
     let correctImage = fiveLetterWordsObj[word]
@@ -416,6 +412,7 @@ function gameOver() {
     setTimeout( () => {
         endBox.classList.remove("hide-me")
     }, 1000)
+    endBox.classList.remove("hide-me")
 }
 
 function resetRound() {
@@ -435,4 +432,3 @@ function resetRound() {
     correctGuess = 0
     answerCount = 0
 }
-

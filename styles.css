@@ -1,49 +1,9 @@
 * {
     box-sizing: border-box;
     background: rgb(243, 243, 231);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-.everything {
-    width: 100%;
-    height: 95vh;
-    display: flex;
-    flex-direction: column;
-    align-content: space-between
-}
-header {
-    width: 500px;
-    margin: 0 auto;
-    text-align: left;
-    font-size: 1.2rem;
-    border-bottom: 2px double black;
-}
-header button {
-    position: relative;
-    left: 30%;
-    top: 5%;
-    height: 50%;
-    width: 20%;
-    font-size: 1.2rem;
-    font-weight: bold;
-    box-shadow: 0 0 5px black;
-}
-header button:hover {
-    background-color: yellow;
-    transition: all 0.5s linear;
-    cursor: pointer;
-}
-
-header span {
-    font-size: 0.8rem;
-    font-style: italic;
-}
 #message-box {
     width: 20%;
     height: 2rem;
@@ -57,87 +17,37 @@ header span {
     transform: translateX(-50%);
 }
 
-.dictionary {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 5%;
-    width: 800px;
-    height: 600px;
-    border: 2px solid black;
-    margin: 0 auto;
-    display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    overflow: scroll;
-    border-radius: 10px;
-}
-.dictionary-image {
-    width: 100%;
-    max-width: 160px;
-    height: 55px;
-    font-size: 1.5rem;
-    border: 1px solid black;
-    display:flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: center;
-}
-.dictionary-image img {
-    height: 45px;
-    width: 70px;
-}
-.dictionary button {
-    position: absolute;
-    right: 0%;
-    width: 30px;
-    height: 30px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    border: 1px solid black;
-    border-radius: 10px;
-}
-.dictionary button:hover {
-    background-color: yellow;
-    transition: all 0.5s linear;
-}
-
-
 .reset-box {
     position: absolute;
     border: 2px solid black;
     background-color: rgb(243, 243, 231);;
     font-size: 2rem;
     width: 30%;
-    height: 12rem;
-    top: 20%;
+    height: 4rem;
+    top: 1%;
     left: 50%;
     transform: translateX(-50%);
-    border-radius: 10px;
-    /*display: flex;
-    flex-wrap: wrap;*/
+    border-radius: 5%;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    box-shadow: 1px 2px 2px dimgray;
 }
 .reset-box button {
     height: 3rem;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
+    display: block;
     background-color: lightgreen;
     border: none;
-    border-radius: 10px;
+    border-radius: 5%;
     font-size: 2rem;
     margin-top: 5px;
 }
-.reset-box div {
-    width: 100%;
-    text-align: center;
+.reset-box p {
+    display: block;
     margin: 0;
+    margin-right: 30px;
+    margin-top: 10px;
 }
+<<<<<<< HEAD
 #end-image {
     display: flex;
     align-items: center;
@@ -153,12 +63,16 @@ header span {
     flex-grow: 1;
     align-items: center;
 }
+=======
+
+>>>>>>> parent of a92f77d (Feature Complete)
 
 .upper-container,.lower-container {
     display: flex;
     justify-content: center;
     
 }
+<<<<<<< HEAD
 .upper-inner-container {
     display: flex;
     justify-content: center;
@@ -166,16 +80,20 @@ header span {
     width: 510px;
     height: 410px;
 }
+=======
+>>>>>>> parent of a92f77d (Feature Complete)
 .answer-box-container {
+    margin-top: 60px;
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
     width: 350px;
     height: 410px;
     justify-content: center;
-    gap: 1px;
+    gap: 3px;
     
 }
+<<<<<<< HEAD
 .answer-image-container {
     width: 120px;
     height: 410px;
@@ -194,16 +112,17 @@ header span {
     width: 100%;
     height: 100%;
 }
+=======
+>>>>>>> parent of a92f77d (Feature Complete)
 .answer-input {
     width: 100%;
-    height: 60px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
 
 .answer-box {
-    height: 60px;
+    height: 65px;
     width: 16%;
     border: 1px solid grey;
     border-radius: 10%;
@@ -223,9 +142,9 @@ header span {
     width: 500px;
     height: 200px;
     justify-content: center;
-    gap: 4px;
+    gap: 5px;
     text-align: center;
-    margin-top: 5px;
+    margin-top: 20px;
 }
 
 .key {
@@ -243,13 +162,4 @@ header span {
 
 .hide-me {
     display: none;
-}
-
-.go-transparent {
-    opacity: 50%;
-}
-
-.dictionary-close {
-    height: 0px;
-    border: none;
 }
