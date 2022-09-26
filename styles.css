@@ -150,7 +150,6 @@ header span {
     align-items: center;
 }
 .upper-container {
-    height: 380px;
     flex-grow: 1;
     align-items: center;
 }
@@ -165,21 +164,21 @@ header span {
     justify-content: center;
     flex-wrap: wrap;
     width: 510px;
-    height: 100%;
+    height: 410px;
 }
 .answer-box-container {
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
     width: 350px;
-    height: 100%;
+    height: 410px;
     justify-content: center;
     gap: 1px;
     
 }
 .answer-image-container {
     width: 120px;
-    height: 100%;
+    height: 410px;
     margin-left: 20px;
     display: flex;
     flex-wrap: wrap;
@@ -188,7 +187,7 @@ header span {
 }
 .answer-image {
     width: 80px;
-    height: 63px;
+    height: 65px;
     border-radius: 5px;
 }
 .answer-image img {
@@ -222,7 +221,7 @@ header span {
     flex-direction: row;
     flex-wrap: wrap;
     width: 500px;
-    height: 180px;
+    height: 200px;
     justify-content: center;
     gap: 4px;
     text-align: center;
@@ -236,13 +235,10 @@ header span {
     border-radius: 15%;
     transition: all 0.1s linear;
 }
-.actionkey {
+.key:nth-of-type(20), .key:nth-of-type(28) {
     width: 13%;
-    height: 30%;
     font-size: 20px;
-    border-radius: 15%;
     text-align: center;
-    transition: all 0.1s linear;
 }
 
 .hide-me {
