@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const sixLetterWords = ["doctor", "mother", "school", "friday", "eraser", "desert", "potato", "always", "father", 
 "chorus", "hungry", "monday", "monkey", "castle", "rabbit", "sister", "active", "spider", "coffee", "dishes", 
 "shrine", "turtle", "omelet", "yellow", "cloudy", "cherry", "skiing", "sweden", "shrimp", "orange", "listen", 
@@ -38,6 +39,16 @@ const sixLetterWordsObj = {"doctor": "./images/jobs/img5.png", "mother": "./imag
 "forest": "./images/nature/img2.png", "gentle": "./images/personalities/img5.png", "dinner": "./images/meals/img3.png", 
 "famous": "./images/descriptions/img12.png", "racket": "./images/commonitems/img3.png", "travel": "./images/actions1/img17.png", 
 "canada": "./images/countries/img4.png", "museum": "./images/buildings/img6.png"}
+=======
+const fiveLetterWords = ["sweet", "india", "music", "korea", "never", "under", "rainy", "watch", "cards", "nurse", "kenya", "zebra", "house", "horse",
+ "ghana", "whale", "koala", "shirt", "squid", "egypt", "write", "fruit", "spicy", "paper", "chair", "funny", "curry", "mouth", "shark", "cross", "italy", 
+ "teach", "river", "socks", "salad", "juice", "block", "dance", "think", "black", "salty", "ruler", "drill", "spain", "enjoy", "lunch", "mouse", "white", 
+ "pants", "onion", "tired", "clock", "drink", "skate", "clean", "small", "store", "tiger", "teeth", "steak", "table", "brown", "train", "truck", "heart", 
+ "great", "happy", "china", "moral", "japan", "pilot", "speak", "sunny", "brush", "bread", "panda", "baker", "piano", "green", "pizza", "sheep", "brass", 
+ "bacon", "snake", "study", "polar", "comic", "right", "short", "water", "melon", "peach", "brave", "snowy", "night", "camel", "track", "field", "apple", 
+ "lemon", "eagle"]
+
+>>>>>>> parent of a92f77d (Feature Complete)
 
 let word = ""
 let randomSelectSix = "" 
@@ -47,21 +58,31 @@ let correctGuess = 0
 let gameActive = true
 let inputArr = []
 let answerArr = []
+<<<<<<< HEAD
 const dictionary = document.querySelector(".dictionary")
 function buildDictionary() {
     sixLetterWords.forEach( (x) => {
         dictionary.innerHTML += `<div class="dictionary-image">${x} <img src="${sixLetterWordsObj[x]}"></div>`
     })
+=======
+>>>>>>> parent of a92f77d (Feature Complete)
 
-}
-buildDictionary()
 start()
 
+
+
+console.log(answerArr)
+
+
 function start() {
+<<<<<<< HEAD
     randomSelectSix = Math.floor( Math.random()*104 )
     word = sixLetterWords[randomSelectSix]
+=======
+    randomSelectFive = Math.floor( Math.random()*101 )
+    word = fiveLetterWords[randomSelectFive]
+>>>>>>> parent of a92f77d (Feature Complete)
     answerArr = word.split("")
-    console.log(answerArr)
     answerCount = 0
     round = 0
     correctGuess = 0
@@ -85,17 +106,13 @@ const enterBtn = document.getElementById("enter")
 const keyboardDiv = document.querySelector(".keyboard")
 const messageBox = document.getElementById("message-box")
 const endMessage = document.getElementById("end-message")
-const endImage = document.getElementById("end-image")
 const resetBtn = document.getElementById("reset-btn")
 const endBox = document.querySelector(".reset-box")
-const upperBox = document.querySelector(".upper-container")
-const lowerBox = document.querySelector(".lower-container")
-const imageBox = document.querySelector(".answer-image-container")
-const dictionaryBtn = document.getElementById("dictionary-button")
-const closeDictionaryBtn = document.getElementById("close-dictionary")
+
 const answerBoxContainer = document.querySelector(".answer-box-container")
 
 let answerInput = document.querySelector(".answer-active")
+
 let answerBox0 = answerInput.children[0]
 let answerBox1 = answerInput.children[1]
 let answerBox2 = answerInput.children[2]
@@ -103,30 +120,122 @@ let answerBox3 = answerInput.children[3]
 let answerBox4 = answerInput.children[4]
 let answerBox5 = answerInput.children[5]
 
-let allKeys = document.querySelectorAll(".keys")
-allKeys.forEach( (x) => {
-    x.addEventListener("click",function() {
-        let letter = x.textContent
-        press(letter)
-    })
+const qKey = keyboardDiv.children[0]
+const wKey = keyboardDiv.children[1]
+const eKey = keyboardDiv.children[2]
+const rKey = keyboardDiv.children[3]
+const tKey = keyboardDiv.children[4]
+const yKey = keyboardDiv.children[5]
+const uKey = keyboardDiv.children[6]
+const iKey = keyboardDiv.children[7]
+const oKey = keyboardDiv.children[8]
+const pKey = keyboardDiv.children[9]
+const aKey = keyboardDiv.children[10]
+const sKey = keyboardDiv.children[11]
+const dKey = keyboardDiv.children[12]
+const fKey = keyboardDiv.children[13]
+const gKey = keyboardDiv.children[14]
+const hKey = keyboardDiv.children[15]
+const jKey = keyboardDiv.children[16]
+const kKey = keyboardDiv.children[17]
+const lKey = keyboardDiv.children[18]
+const zKey = keyboardDiv.children[21]
+const xKey = keyboardDiv.children[22]
+const cKey = keyboardDiv.children[23]
+const vKey = keyboardDiv.children[24]
+const bKey = keyboardDiv.children[25]
+const nKey = keyboardDiv.children[26]
+const mKey = keyboardDiv.children[27]
+
+qKey.addEventListener("click",function() {
+    press("q")
+})
+wKey.addEventListener("click",function() {
+    press("w")
+})
+eKey.addEventListener("click",function() {
+    press("e")
+})
+rKey.addEventListener("click",function() {
+    press("r")
+})
+tKey.addEventListener("click",function() {
+    press("t")
+})
+yKey.addEventListener("click",function() {
+    press("y")
+})
+uKey.addEventListener("click",function() {
+    press("u")
+})
+iKey.addEventListener("click",function() {
+    press("i")
+})
+oKey.addEventListener("click",function() {
+    press("o")
+})
+pKey.addEventListener("click",function() {
+    press("p")
+})
+aKey.addEventListener("click",function() {
+    press("a")
+})
+sKey.addEventListener("click",function() {
+    press("s")
+})
+dKey.addEventListener("click",function() {
+    press("d")
+})
+fKey.addEventListener("click",function() {
+    press("f")
+})
+gKey.addEventListener("click",function() {
+    press("g")
+})
+hKey.addEventListener("click",function() {
+    press("h")
+})
+jKey.addEventListener("click",function() {
+    press("j")
+})
+kKey.addEventListener("click",function() {
+    press("k")
+})
+lKey.addEventListener("click",function() {
+    press("l")
+})
+zKey.addEventListener("click",function() {
+    press("z")
+})
+xKey.addEventListener("click",function() {
+    press("x")
+})
+cKey.addEventListener("click",function() {
+    press("c")
+})
+vKey.addEventListener("click",function() {
+    press("v")
+})
+bKey.addEventListener("click",function() {
+    press("b")
+})
+nKey.addEventListener("click",function() {
+    press("n")
+})
+mKey.addEventListener("click",function() {
+    press("m")
 })
 
-window.addEventListener("keydown", (x) => {
-    if (gameActive) {
+window.addEventListener("keydown", (x) => {       
     if (x.key === "Enter") {
         checkGuess()
     } else if (x.key === "Backspace") {
         del()
     } else {
-        if ( /[a-z]/.test(x.key) && x.key.length === 1) {
+    if ( /[a-z]/.test(x.key) && x.key.length === 1) {
         press(x.key)
-        }
     }
-    } else {
-    if (x.key === "Enter") {
-        resetGame()
-        }
-    }
+}
 })
 
 
@@ -197,21 +306,8 @@ enterBtn.addEventListener("click",function(){
 })
 
 resetBtn.addEventListener("click",function(){
-    resetGame()
-})
-
-dictionaryBtn.addEventListener("click",function(){
-    dictionary.classList.remove("dictionary-close")
-})
-
-closeDictionaryBtn.addEventListener("click",function() {
-    dictionary.classList.add("dictionary-close")
-})
-
-function resetGame() {
     endBox.classList.add("hide-me")
-    upperBox.classList.remove("go-transparent")
-    lowerBox.classList.remove("go-transparent")
+    
     answerInput.classList.remove("answer-active")
     let currentAnswerBox = answerBoxContainer.children[0]
     currentAnswerBox.classList.add("answer-active")
@@ -221,28 +317,35 @@ function resetGame() {
     answerBox2 = answerInput.children[2]
     answerBox3 = answerInput.children[3]
     answerBox4 = answerInput.children[4]
+<<<<<<< HEAD
     answerBox5 = answerInput.children[5]
     let imageBoxes = document.querySelectorAll(".answer-image")
     imageBoxes.forEach( (x) => {
         x.textContent = ""
     })
+=======
+>>>>>>> parent of a92f77d (Feature Complete)
     start()
-}
+})
 
 function checkGuess() {
     let thisGuess = inputArr.join("")
+    
     if (gameActive) {
     if (answerCount !== 6) {
         showMessage("Not enough letters")
     } else if ( !sixLetterWords.includes(thisGuess) ) {
         showMessage("Word not in list")
     } else {
+<<<<<<< HEAD
         let currentImageBox = imageBox.children[round]
         let currentImage = sixLetterWordsObj[thisGuess]
         currentImageBox.innerHTML = `<img src=${currentImage}>`
+=======
+>>>>>>> parent of a92f77d (Feature Complete)
         greenCheck()
-        }
     }
+}
 }
 
 function showMessage(message) {
@@ -256,17 +359,21 @@ function showMessage(message) {
 function greenCheck() {
     for ( let i = 0; i < answerArr.length; i++ ) {
         if (answerArr[i] === inputArr[i]) {
+            console.log("green" + i)
             let currentAnswer = answerInput.children[i]
-            currentAnswer.style.backgroundColor ="greenyellow"
+            currentAnswer.style.backgroundColor ="green"
+
             let allKeys = document.querySelectorAll(".key")
             allKeys.forEach ( (x) => {
                 if (x.textContent === inputArr[i]) {
-                    x.style.backgroundColor = "greenyellow"
+                    x.style.backgroundColor = "green"
                 }
             })
             correctGuess++
             answerArr.splice( i, 1, "*")
             inputArr.splice( i, 1, "@")
+            console.log(answerArr)
+            console.log(inputArr)
             }
         }   
             if ( correctGuess === 6) {
@@ -279,27 +386,35 @@ function greenCheck() {
 function yellowCheck() {
     for ( let i = 0; i < answerArr.length; i++ ) {
         if (answerArr.includes(inputArr[i]) && answerArr[i] !== inputArr[i]) {
+        console.log("yellow" + i)
         let currentAnswer = answerInput.children[i]
-            currentAnswer.style.backgroundColor ="yellow"
+            currentAnswer.style.backgroundColor ="goldenrod"
 
             let allKeys = document.querySelectorAll(".key")
             allKeys.forEach ( (x) => {
-                if (x.textContent === inputArr[i] && x.style.backgroundColor !== "greenyellow") {
-                    x.style.backgroundColor = "yellow"
+                if (x.textContent === inputArr[i] && x.style.backgroundColor !== "green") {
+                    x.style.backgroundColor = "goldenrod"
                 }
             })
-            let cutIndex = answerArr.indexOf(`${inputArr[i]}`)
-            inputArr.splice( i, 1, "@")
-            answerArr.splice( cutIndex, 1, "*")
+        console.log(answerArr.indexOf(`${inputArr[i]}`))
+        let cutIndex = answerArr.indexOf(`${inputArr[i]}`)
+
+        inputArr.splice( i, 1, "@")
+        
+        answerArr.splice( cutIndex, 1, "*")
+        
+        console.log(answerArr)
+        console.log(inputArr)
         } 
     }  for ( let i = 0; i < 6; i++ ) {
         let currentAnswer = answerInput.children[i]
         let allKeys = document.querySelectorAll(".key")
-        if (currentAnswer.style.backgroundColor !== "greenyellow" && currentAnswer.style.backgroundColor !== "yellow") {
-            currentAnswer.style.backgroundColor = "darkgray"
+        if (currentAnswer.style.backgroundColor !== "green" && currentAnswer.style.backgroundColor !== "goldenrod") {
+            currentAnswer.style.backgroundColor = "grey"
+            console.log(currentAnswer.textContent)
             allKeys.forEach ( (x) => {
-                if (x.textContent === currentAnswer.textContent && x.style.backgroundColor !== "greenyellow" && x.style.backgroundColor !== "yellow") {
-                    x.style.backgroundColor = "darkgray"
+                if (x.textContent === currentAnswer.textContent && x.style.backgroundColor !== "green" && x.style.backgroundColor !== "goldenrod") {
+                    x.style.backgroundColor = "grey"
                 }
             })
         }
@@ -311,8 +426,10 @@ function yellowCheck() {
 }
 
 function playerWins() {
+    console.log("player wins")
     gameActive = false
     endMessage.textContent = "You Win!"
+<<<<<<< HEAD
     let correctImage = sixLetterWordsObj[word]
     endImage.innerHTML = `It was "${word}" <img src=${correctImage}>`
     upperBox.classList.add("go-transparent")
@@ -320,11 +437,17 @@ function playerWins() {
     setTimeout( () => {
         endBox.classList.remove("hide-me")
     }, 1000)
+=======
+    endBox.classList.remove("hide-me")
+
+>>>>>>> parent of a92f77d (Feature Complete)
 }
 
 function gameOver() {
+    console.log("Game Over")
     gameActive = false
     endMessage.textContent = "You Lose!"
+<<<<<<< HEAD
     let correctImage = sixLetterWordsObj[word]
     endImage.innerHTML = `It was "${word}" <img src=${correctImage}>`
     upperBox.classList.add("go-transparent")
@@ -332,6 +455,9 @@ function gameOver() {
     setTimeout( () => {
         endBox.classList.remove("hide-me")
     }, 1000)
+=======
+    endBox.classList.remove("hide-me")
+>>>>>>> parent of a92f77d (Feature Complete)
 }
 
 function resetRound() {
