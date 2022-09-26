@@ -235,10 +235,13 @@ header span {
     border-radius: 15%;
     transition: all 0.1s linear;
 }
-.key:nth-of-type(20), .key:nth-of-type(28) {
+.actionkey {
     width: 13%;
+    height: 30%;
     font-size: 20px;
+    border-radius: 15%;
     text-align: center;
+    transition: all 0.1s linear;
 }
 
 .hide-me {
