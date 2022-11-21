@@ -43,6 +43,8 @@ let correctGuess = 0
 let gameActive = true
 let inputArr = []
 let answerArr = []
+let dictionaryOpen = false
+
 const dictionary = document.querySelector(".dictionary")
 function buildDictionary() {
     fiveLetterWords.forEach( (x) => {
@@ -188,10 +190,17 @@ resetBtn.addEventListener("click",function(){
 })
 
 dictionaryBtn.addEventListener("click",function(){
+    if (!dictionaryOpen) {
+        dictionaryOpen = true
     dictionary.classList.remove("dictionary-close")
+    } else {
+        dictionaryOpen = false
+        dictionary.classList.add("dictionary-close")
+    }
 })
 
 closeDictionaryBtn.addEventListener("click",function() {
+    dictionaryOpen = false
     dictionary.classList.add("dictionary-close")
 })
 
